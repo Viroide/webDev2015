@@ -326,3 +326,6 @@ body {
 
 .con {
   color: #b14645; }
+
+.list-no-decoration {
+  list-style-type: none !important; }
