@@ -47,6 +47,9 @@ $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: $blood;
 $selectionColor: #fff;
 
+//My colors
+$pro: #4cbfc0;
+$con: #b14645;
 
 // Theme template ------------------------------
 @import "../template/theme";
@@ -78,6 +81,12 @@ $selectionColor: #fff;
     vertical-align: baseline;
 }
 
-.texto-subrallado h2, .texto-subrallado p {
+.texto-subrallado h2, .texto-subrallado p,p.texto-subrallado  {
     background-color: rgba(170, 34, 51, .5);
+    display: inline-block;
 }
+.blood{
+    color: $blood;
+}
+.pro {color:$pro;}
+.con {color:$con;}

@@ -314,5 +314,15 @@ body {
 .reveal small code {
   vertical-align: baseline; }
 
-.texto-subrallado h2, .texto-subrallado p {
-  background-color: rgba(170, 34, 51, 0.5); }
+.texto-subrallado h2, .texto-subrallado p, p.texto-subrallado {
+  background-color: rgba(170, 34, 51, 0.5);
+  display: inline-block; }
+
+.blood {
+  color: #a23; }
+
+.pro {
+  color: #4cbfc0; }
+
+.con {
+  color: #b14645; }

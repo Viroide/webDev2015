@@ -164,15 +164,421 @@
 					<section data-background="/img/tmux.png">
 						<h2><strong><a href="http://tmuxp.readthedocs.org/en/latest/about_tmux.html">Tmux</a></strong> vs terminator</h2>
 					</section>
+					<section >
+						<h2>zsh</h2>
+						<ul>
+							<li>Autocomplete molon</li>
+							<li>Extension de path</li>
+							<li>Corrector de tecleo para <em>"macnos"</em></li>
+							<li>History mas inteligente</li>
+							<li>Auto-highlight</li>
+						</ul>
+					</section>
+					<section>
+						<h2><a href="https://github.com/robbyrussell/oh-my-zsh">Oh my zsh!</a></h2>
+						<p>Auto-tuneo de todo el shell</p>
+						<ul>
+							<li><a href="https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins">Plugins</a></li>
+							<li><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes">Themes</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2><a href="https://github.com/sorin-ionescu/prezto">Prezto</a></h2>
+						<p>Lo mismo pero + sencillo + ordenado y + bonito</p>
+					</section>
+					<section>
+						<h2>Mis plugins</h2>
+						<pre><code>
+  'environment' \
+  'terminal' \
+  'editor' \
+  'history' \
+  'directory' \
+  'spectrum' \
+  'utility' \
+  'completion' \
+  'prompt' \
+  'git' \
+  'fasd' \
+  'python' \
+  'history' \
+  'syntax-highlighting'
+						</code></pre>
+					</section>
 				</section>
 
 				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
+					<section data-background="/img/bower.png" data-background-repeat="repeat" data-background-size="100px" >
+						<h2><a href="http://bower.io/">Bower</a></h2>
+						<p class="texto-subrallado">	Install dependencies like a sir.</p>
+					</section>
+					<section>
+						<h2>bower.json</h2>
+						<pre><code>
+{
+  [...],
+  "dependencies": {
+    "headjs": "~1.0.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ]
+}
+							
+						</code></pre>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2><a href="http://gruntjs.com/">Grunt</a> vs <a href="http://gulpjs.com/">Gulp</a> VS <a href="http://brunch.io/">Brunch</a></h2>
+					</section>
+					<section>
+						<h2>Pros y contras</h2>
+						<ul>Grunt
+							<li class="pro">+plugins</li>
+							<li class="con">configuracion</li>
+						</ul>
+						<ul>Gulp
+							<li class="pro">+rápido</li>
+							<li class="con">hype</li>
+						</ul>
+						<ul>Brunch
+							<li class="pro">como viene</li>
+							<li class="con">-plugins</li>
+						</ul>
+
+						
+					</section>
+					<section>
+						<h2>Grunt</h2>
+						<pre><code>
+module.exports = function( grunt ) {
+    'use strict';
+
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+
+        meta:{
+            banner : '/* <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy/m/d") %>\n' +
+                    '   <%= pkg.homepage %>\n' +
+                    '   Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>' +
+                    ' - Licensed <%= (pkg.license).join(", ") %> */\n', 
+            path : "emoweb/media/"
+        },
+        stylus: {
+          compileDist: {
+            options: {compress: true},
+            files: {
+              '<%= meta.path %>css/dist/estilos.css':
+              ['<%= meta.path %>css/estilos.styl', '<%= meta.path %>css/icons.styl', '<%= meta.path %>css/graficas.styl'] // 1:1 compile
+              // 'path/to/another.css': ['path/to/sources/*.styl', 'path/to/more/*.styl'] // compile and concat into single file
+            }
+          },
+          compileDebug: {
+            options: {compress: false,linenos: true},
+            files: {
+              '<%= meta.path %>css/dist/estilos_debug.css': 
+              ['<%= meta.path %>css/estilos.styl', '<%= meta.path %>css/icons.styl', '<%= meta.path %>css/graficas.styl'] // 1:1 compile
+              // 'path/to/another.css': ['path/to/sources/*.styl', 'path/to/more/*.styl'] // compile and concat into single file
+            }
+          }
+        },
+        uglify: {
+            options: {
+                banner:"<%= meta.banner %>",
+                report: 'gzip'
+            },
+            dist: {
+                files: {
+                    // 'yokse/static/dist/yokse.min.js': '<%= concat.dist.dest %>',
+                    '<%= meta.path %>js/dist/all.min.js':
+                     ['<%= meta.path %>components/scroll/jquery.mCustomScrollbar.min.js',
+                       '<%= meta.path %>components/jquery-cookie/jquery.cookie.js',
+                       '<%= meta.path %>js/main.js',
+                       '<%= meta.path %>js/coffee.js'  ]
+                }
+            },
+            beauty: {
+                options: {
+                    beautify: true
+                },
+                files: {
+                    // 'yokse/static/dist/yokse.min.js': '<%= concat.dist.dest %>',
+                    '<%= meta.path %>js/dist/beauty.min.js': 
+                    ['<%= meta.path %>components/scroll/jquery.mCustomScrollbar.min.js',
+                       '<%= meta.path %>components/jquery-cookie/jquery.cookie.js',
+                       '<%= meta.path %>js/main.js',
+                       '<%= meta.path %>js/coffee.js'  ]
+                }
+            }
+        },
+        coffee:{
+            compile: {
+                files: {
+                  '<%= meta.path %>js/coffee.js':
+                  '<%= meta.path %>js/coffee/source.coffee', // 1:1 compile, identical output to join = false
+                  // 'path/to/another.js': ['path/to/sources/*.coffee', 'path/to/more/*.coffee'] // concat then compile into single file
+                }
+          },
+        },
+        notify: {
+            estilos: {
+              options: {
+                title: 'Nuevos stylos!!',  // optional
+                message: 'grunt grunt gruuuunt', //required
+              }
+            },
+            jss: {
+              options: {
+                title: 'Nuevos JSs!!',  // optional
+                message: 'grunt grunt gruuuunt', //required
+              }
+            },
+            deploy: {
+              options: {
+                title: 'DESPLEGAD!!',  // optional
+                message: 'grunt grunt gruuuunt', //required
+              }
+            },
+            coffee: {
+                options: {
+                    title: 'CAFECITO CALIENTEEE!!',  // optional
+                    message: 'grunt grunt gruuuunt', //required
+                }
+            }
+        },
+
+        jshint: {
+            all: ['Gruntfile.js', '<%= meta.path %>js/main.js', '<%= meta.path %>js/coffee.js']
+        },
+
+
+        watch: {
+            options: {livereload: true},
+            fruntfile:{
+                files: ['Gruntfile.js'],
+                tasks: ['jshint']
+            },
+            javascript: {
+                files: ['<%= meta.path %>js/*.js'],
+                tasks: ['jshint','uglify', 'notify:jss']
+            },
+            stiles: {
+                files: ['<%= meta.path %>css/*.styl'],
+                tasks: ['stylus', 'notify:estilos']
+            },
+            coffee:{
+                files: '<%= meta.path %>js/coffee/source.coffee',
+                tasks: ['coffee:compile', 'notify:coffee']
+            }
+        },
+         
+
+    });
+
+    // grunt.loadNpmTasks( 'grunt-contrib-sass' );
+    grunt.loadNpmTasks( 'grunt-contrib-watch' );
+    grunt.loadNpmTasks( 'grunt-contrib-clean' );
+    grunt.loadNpmTasks( 'grunt-contrib-concat' );
+    grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
+    grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+    grunt.loadNpmTasks( 'grunt-contrib-stylus' );
+    grunt.loadNpmTasks( 'grunt-notify');
+    grunt.loadNpmTasks('grunt-contrib-coffee');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+
+
+
+    grunt.registerTask('compilar', [
+      'jshint',
+      'uglify',
+      'stylus',
+      'notify:compilar'
+      ]);
+    grunt.registerTask('desplegar', [
+        'gitcommit', 
+        'gitpush', 
+        'sshexec:deploy',
+        'notify:deploy']);
+
+    grunt.registerTask('commit', [
+        'gitcommit', 
+        'gitpush'
+    ]);
+
+    // grunt.registerTask( 'css', ['stylus'] );
+
+};
+							
+						</code></pre>
+						
+					</section>
+					<section>
+						<h2>Gulp</h2>
+						<pre><code>
+'use strict';
+
+var gulp        = require('gulp'),
+    rename      = require('gulp-rename'),
+    uglify      = require('gulp-uglify'),
+    concat      = require('gulp-concat'),
+    sourcemaps  = require('gulp-sourcemaps'),
+    stylus      = require('gulp-stylus'),
+    jshint      = require('gulp-jshint'),
+    livereload  = require('gulp-livereload'),
+    watch       = require('gulp-watch'),
+    imagemin    = require('gulp-imagemin'),
+    header      = require('gulp-header'),
+    replace     = require('gulp-token-replace'),
+    nib         = require('nib'),
+    jade        = require('gulp-jade');
+
+var pkg         = require('./package.json'),
+    config      = require('./config/config.json');
+    config.debug.version = pkg.version; 
+    config.build.version = pkg.version; 
+
+
+var templatespath        = config.templatespath,
+    srcPath     = config.srcPath,
+    distPath    = config.distPath;
+
+var banner = ['/**',
+  ' * <%= pkg.name %> - <%= pkg.description %>',
+  ' * @version v<%= pkg.version %>',
+  ' * @author <%= pkg.author %>',
+  ' * @license <%= pkg.license %>',
+  ' */',
+  ''].join('\n');
+
+gulp.task('html', function() {
+ 
+  gulp.src(srcPath+'/templates/*.jade')
+    .pipe(jade({
+      locals: config.debug, 
+      pretty: true
+    }))
+    .pipe(gulp.dest(templatespath))
+    .pipe(livereload());
+});
+
+gulp.task('html-build', function() {
+ 
+  gulp.src(srcPath+'/templates/*.jade')
+    .pipe(jade({
+      locals: config.build
+    }))
+    .pipe(gulp.dest(templatespath))
+    .pipe(livereload());
+});
+
+
+gulp.task('js-build', function () {
+  return gulp.src(srcPath+'/js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
+    .pipe(uglify())
+    .pipe(concat(pkg.name+'.min.js'))
+    .pipe(header(banner, { pkg : pkg } ))
+    .pipe(gulp.dest(distPath+"/js/"))
+    .pipe(livereload());
+});
+
+gulp.task('js', function () {
+  return gulp.src(srcPath+'/js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
+    .pipe(concat(pkg.name+'.js'))
+    .pipe(header(banner, { pkg : pkg } ))
+    .pipe(gulp.dest(distPath+"/js/"))
+    .pipe(livereload());
+});
+
+gulp.task('css-build', function() {
+  return gulp.src(srcPath+'/css/*.styl')
+    .pipe(stylus({ use: nib(), compress: true }))
+    .pipe(rename({ basename: pkg.name  , suffix:".min"}))
+    .pipe(header(banner, { pkg : pkg } ))
+    .pipe(gulp.dest(distPath+'/css/'));
+});
+
+gulp.task('css', function() {
+  return gulp.src(srcPath+'/css/*.styl')
+    .pipe(sourcemaps.init())
+    .pipe(stylus({use: nib(),linenos: true}))
+    .pipe(rename({ basename: pkg.name}))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(distPath+'/css/'))
+    .pipe(livereload());
+
+});
+
+gulp.task('img', function () {
+    return gulp.src(distPath+'/img/*.*')
+        .pipe(imagemin())
+        .pipe(gulp.dest(distPath+'/img/'));
+});
+
+
+gulp.task('watch', function() {
+  livereload.listen();
+  gulp.watch(srcPath+'templates/*.jade', ['html']);
+  gulp.watch(srcPath+'css/*.styl', ['css']);
+  gulp.watch(srcPath+'js/*.js', ['js']);
+});
+
+
+gulp.task('server', ['js-build', 'css-build', 'html-build']);
+gulp.task('build', ['js-build', 'css-build', 'img', 'html-build']);
+gulp.task('build-js', ['js-build']);
+gulp.task('build-css', ['css-build']);
+gulp.task('build-html', ['html-build']);
+
+gulp.task('dev', ['js', 'css', 'html']);
+
+
+gulp.task('default', ['js', 'css', 'html']);
+
+						</code></pre>
+						
+					</section>
+					<section>
+						<h2>Brunch</h2>
+						<pre><code>
+exports.config =
+  # See http://brunch.io/#documentation for docs.
+  files:
+    javascripts:
+      joinTo:
+        'javascripts/app.js': /^app/
+        'javascripts/vendor.js': /^(?!app)/
+
+    stylesheets:
+      joinTo: 'stylesheets/app.css'
+
+    templates:
+      joinTo: 'javascripts/app.js'	
+						</code></pre>
+						
+					</section>
 				</section>
 
+
+
+
+
+				<section>
+					<blockqoute cite="http://webdevquotes.tumblr.com/post/62003314611/simply-start-making-stuff">
+						<p>
+							<em>“Simply start making stuff.”</em>
+						</p>
+						<p class="blood">Shawn Wilkins 2013</p>
+					</blockqoute>
+				</section>
 				<section data-markdown>
 					<script type="text/template">
 						## Markdown support
@@ -191,28 +597,6 @@
 					</script>
 				</section>
 
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
 
 				<section id="transitions">
 					<h2>Transition Styles</h2>
