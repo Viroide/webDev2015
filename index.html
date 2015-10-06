@@ -1,52 +1,907 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 	<head>
-
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<title>reveal.js - The HTML Presentations Framework</title>
 
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/main.css">
+		<title>WebDev on steroids</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="description" content="Taller sobre desarrollo web + steroids">
+		<meta name="author" content="Jon E. Eguiluz">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/blood.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
 
 		<!--[if lt IE 9]>
-		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-
 	</head>
+
 	<body>
-		<div class="wrapper">
 
-			<header>
+		<div class="reveal">
 
-				<h1>reveal.js</h1>
-				<p>
-					The HTML Presentation Framework &mdash; Site coming soon
-				</p>
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>WebDev On Steroids</h1>
+					<h3>Bienvenido a 2015</h3>
+					<p>
+						<small>Creado por Jon E. Eguiluz / <a href="http://twitter.com/viroide">@viroide</a></small>
+					</p>
+				</section>
+				<section>
+					<h3><a href="https://www.twitter.com/viroide">Jon E. Eguiluz</a></h3>
+					<pre><code>
+{
+    "name": "Jon E. Eguiluz",
+    "title": "webDev ninja", 
+    "subtitle": "I ♥ coding",
+    "languages": ["html", "css", "js", "python"],
+    "extra_knowledge": ["git", "django", "gulp", "bash scripting", "linux"],
+    "experience": "5 years as hard WebDev",
+    "able_to_teaching": true
+    "link": "https://www.twitter.com/viroide"
+}						
+					</code></pre>
+				</section>
+				<section data-background="http://i.giphy.com/Er3QVX48nt5ok.gif">
+					<h2>De esto...</h2>					
+				</section>
+				<section data-background="http://i.giphy.com/JapiQqzjs4A1O.gif">
+					<h2>...a esto</h2>
+				</section>
+	
+				<section>
+					<h2>Indice</h2>
+					<ul>
+						<li><strong>Editores de texto de este siglo</strong>: SublimeText3, Coda, Atom</li>
+						<li><strong>Plugins para editores.</strong> (Sublime)</li>
+						<li><strong>Terminal + esteroides</strong>: Tmux, zsh, Prezto/Oh my bash</li>
+						<li><strong>Gestion de paquetes web</strong>: Bower</li>
+						<li><strong>Automatizadores de tareas</strong>: Grunt vs Gulp...</li>
+						<li><strong>.dotfiles</strong>: configuraciones útiles para casi todo</li>
+					</ul>
+				</section>
 
-			</header>
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Editores de texto</h2>
+						<ul>
+							<li>SublimeText 3</li>
+							<li>Coda</li>
+							<li>Atom</li>
+							<li>(¿sugerencias?)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Sublime Text 3</h2>
+						<ul>
+							<li>Cursor múltiple</li>
+							<li>Goto lo que haga falta</li>
+							<li>Todos los comandos en la paleta</li>
+							<li>Mini-mapa</li>
+							<li><a href="https://packagecontrol.io/browse/labels/theme">Themes</a> y <a href="https://packagecontrol.io/">plugins</a> a paladas</li>
+							<li><strong>Rápido y estable</strong></li>
+						</ul>
+					</section>
+					<section data-background-video="/s3.amazonaws.com/files.panic.com/coda/Coda%20Demo%20English%201.2.mp4,//s3.amazonaws.com/files.panic.com/coda/Coda%20Demo%20English%201.2.webm"  data-background-video-loop>
+						<h2>Coda</h2>
+					</section>
+					<section>	
+						<h2>Atom</h2>
+						<ul>
+							<li>Es de <a href="//www.github.com">github</a>.</li>
+							<li><strong>Gratis</strong> y <strong>código libre</strong>.</li>
+							<li>Integración con <strong>Git</strong></li>
+							<li>Install and fun <strong>☺</strong></li>
+							<li>Plugins y themes bien seleccionados.</li>
+							<li>Interface bastante chulo.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Muchos más</h2>
+						<ul>
+							<li><a href="http://brackets.io/">Brackets</a></li>
+							<li><a href="http://lighttable.com/">Light Table</a></li>
+							<li><strong><a href="https://www.youtube.com/watch?v=pCiVCiku3cM">VIM</a></strong></li>
+							<li>Notepad++</li>
+							<li>UltraEdit</li>
+							<li>Komodo</li>
+							<li>"Eclipse"</li>
+							<li>[...]</li>
+							<li>Dreamweaver</li>
+						</ul>
+					</section>
+				</section>
 
-			<footer>
+				<section >
+					<section data-background="/img/overload.jpg" class="texto-subrallado">
+						<h2><strong>Plugins para editores.</strong> (Sublime)</h2>
+						<p>Para ST3 hay plugins para todo, de hecho demasiados.</p>
+						<p>Hay que elegir solo lo que necesites, todo se carga en RAM y no queremos frenar a esta mala bestia.</p>
+					</section>
+					<section>
+						<h2>Mis plugins</h2>
+						<pre><code class="hljs" data-trim contenteditable>
+{"installed_packages":
+	[
+		"All Autocomplete",
+		"BracketHighlighter",
+		"Color Highlighter",
+		"ColorPicker",
+		"Diffy",
+		"Emmet",
+		"Emmet Css Snippets",
+		"Git",
+		"Gulp",
+		"Jade",
+		"Markdown Preview",
+		"Package Control",
+		"Sass",
+		"SideBarEnhancements",
+		"Stylus",
+		"SublimeLinter",
+		"SublimeLinter-csslint",
+		"SublimeLinter-jshint",
+		"SublimeLinter-pyflakes",
+		"Theme - Afterglow",
+	]
+}
+						</code></pre>
+						<p><a href="https://packagecontrol.io/">Más plugins</a></p>
+					</section>
+				</section>
 
-				<p>
-					<a href="http://lab.hakim.se/reveal-js">Try the demo</a>
-					<a href="https://github.com/hakimel/reveal.js/releases">Download</a>
-				</p>
+				<section>
+					<section>
+						<h2>★Terminal★</h2>
+						<p>La terminal es nuestra amiga, cuidemosla adecuadamente y démosle todo el cariño y esteroides que podamos.</p>
+					</section>
+					<section data-background="/img/tmux.png">
+						<h2><strong><a href="http://tmuxp.readthedocs.org/en/latest/about_tmux.html">Tmux</a></strong> vs terminator</h2>
+					</section>
+					<section >
+						<h2>zsh</h2>
+						<ul>
+							<li>Autocomplete molon</li>
+							<li>Extension de path</li>
+							<li>Corrector de tecleo para <em>"macnos"</em></li>
+							<li>History mas inteligente</li>
+							<li>Auto-highlight</li>
+						</ul>
+					</section>
+					<section>
+						<h2><a href="https://github.com/robbyrussell/oh-my-zsh">Oh my zsh!</a></h2>
+						<p>Auto-tuneo de todo el shell</p>
+						<ul>
+							<li><a href="https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins">Plugins</a></li>
+							<li><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes">Themes</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2><a href="https://github.com/sorin-ionescu/prezto">Prezto</a></h2>
+						<p>Lo mismo pero + sencillo + ordenado y + bonito</p>
+					</section>
+					<section>
+						<h2>Mis plugins</h2>
+						<pre><code>
+  'environment' \
+  'terminal' \
+  'editor' \
+  'history' \
+  'directory' \
+  'spectrum' \
+  'utility' \
+  'completion' \
+  'prompt' \
+  'git' \
+  'fasd' \
+  'python' \
+  'history' \
+  'syntax-highlighting'
+						</code></pre>
+					</section>
+				</section>
 
-			</footer>
+				<section>
+					<section data-background="/img/bower.png" data-background-repeat="repeat" data-background-size="100px" >
+						<h2><a href="http://bower.io/">Bower</a></h2>
+						<p class="texto-subrallado">	Install dependencies like a sir.</p>
+					</section>
+					<section>
+						<h2>bower.json</h2>
+						<pre><code>
+{
+  [...],
+  "dependencies": {
+    "headjs": "~1.0.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ]
+}
+							
+						</code></pre>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2><a href="http://gruntjs.com/">Grunt</a> vs <a href="http://gulpjs.com/">Gulp</a> VS <a href="http://brunch.io/">Brunch</a></h2>
+					</section>
+					<section>
+						<h2>Pros y contras</h2>
+						<ul class="list-no-decoration">Grunt
+							<li class="pro">+plugins</li>
+							<li class="con">configuracion</li>
+						</ul>
+						<ul class="list-no-decoration">Gulp
+							<li class="pro">+rápido</li>
+							<li class="con">hype</li>
+						</ul>
+						<ul class="list-no-decoration">Brunch
+							<li class="pro">como viene</li>
+							<li class="con">-plugins</li>
+						</ul>
+
+						
+					</section>
+					<section>
+						<h2>Grunt</h2>
+						<pre><code>
+module.exports = function( grunt ) {
+    'use strict';
+
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+
+        meta:{
+            banner : '/* <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy/m/d") %>\n' +
+                    '   <%= pkg.homepage %>\n' +
+                    '   Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>' +
+                    ' - Licensed <%= (pkg.license).join(", ") %> */\n', 
+            path : "emoweb/media/"
+        },
+        stylus: {
+          compileDist: {
+            options: {compress: true},
+            files: {
+              '<%= meta.path %>css/dist/estilos.css':
+              ['<%= meta.path %>css/estilos.styl', '<%= meta.path %>css/icons.styl', '<%= meta.path %>css/graficas.styl'] // 1:1 compile
+              // 'path/to/another.css': ['path/to/sources/*.styl', 'path/to/more/*.styl'] // compile and concat into single file
+            }
+          },
+          compileDebug: {
+            options: {compress: false,linenos: true},
+            files: {
+              '<%= meta.path %>css/dist/estilos_debug.css': 
+              ['<%= meta.path %>css/estilos.styl', '<%= meta.path %>css/icons.styl', '<%= meta.path %>css/graficas.styl'] // 1:1 compile
+              // 'path/to/another.css': ['path/to/sources/*.styl', 'path/to/more/*.styl'] // compile and concat into single file
+            }
+          }
+        },
+        uglify: {
+            options: {
+                banner:"<%= meta.banner %>",
+                report: 'gzip'
+            },
+            dist: {
+                files: {
+                    // 'yokse/static/dist/yokse.min.js': '<%= concat.dist.dest %>',
+                    '<%= meta.path %>js/dist/all.min.js':
+                     ['<%= meta.path %>components/scroll/jquery.mCustomScrollbar.min.js',
+                       '<%= meta.path %>components/jquery-cookie/jquery.cookie.js',
+                       '<%= meta.path %>js/main.js',
+                       '<%= meta.path %>js/coffee.js'  ]
+                }
+            },
+            beauty: {
+                options: {
+                    beautify: true
+                },
+                files: {
+                    // 'yokse/static/dist/yokse.min.js': '<%= concat.dist.dest %>',
+                    '<%= meta.path %>js/dist/beauty.min.js': 
+                    ['<%= meta.path %>components/scroll/jquery.mCustomScrollbar.min.js',
+                       '<%= meta.path %>components/jquery-cookie/jquery.cookie.js',
+                       '<%= meta.path %>js/main.js',
+                       '<%= meta.path %>js/coffee.js'  ]
+                }
+            }
+        },
+        coffee:{
+            compile: {
+                files: {
+                  '<%= meta.path %>js/coffee.js':
+                  '<%= meta.path %>js/coffee/source.coffee', // 1:1 compile, identical output to join = false
+                  // 'path/to/another.js': ['path/to/sources/*.coffee', 'path/to/more/*.coffee'] // concat then compile into single file
+                }
+          },
+        },
+        notify: {
+            estilos: {
+              options: {
+                title: 'Nuevos stylos!!',  // optional
+                message: 'grunt grunt gruuuunt', //required
+              }
+            },
+            jss: {
+              options: {
+                title: 'Nuevos JSs!!',  // optional
+                message: 'grunt grunt gruuuunt', //required
+              }
+            },
+            deploy: {
+              options: {
+                title: 'DESPLEGAD!!',  // optional
+                message: 'grunt grunt gruuuunt', //required
+              }
+            },
+            coffee: {
+                options: {
+                    title: 'CAFECITO CALIENTEEE!!',  // optional
+                    message: 'grunt grunt gruuuunt', //required
+                }
+            }
+        },
+
+        jshint: {
+            all: ['Gruntfile.js', '<%= meta.path %>js/main.js', '<%= meta.path %>js/coffee.js']
+        },
+
+
+        watch: {
+            options: {livereload: true},
+            fruntfile:{
+                files: ['Gruntfile.js'],
+                tasks: ['jshint']
+            },
+            javascript: {
+                files: ['<%= meta.path %>js/*.js'],
+                tasks: ['jshint','uglify', 'notify:jss']
+            },
+            stiles: {
+                files: ['<%= meta.path %>css/*.styl'],
+                tasks: ['stylus', 'notify:estilos']
+            },
+            coffee:{
+                files: '<%= meta.path %>js/coffee/source.coffee',
+                tasks: ['coffee:compile', 'notify:coffee']
+            }
+        },
+         
+
+    });
+
+    // grunt.loadNpmTasks( 'grunt-contrib-sass' );
+    grunt.loadNpmTasks( 'grunt-contrib-watch' );
+    grunt.loadNpmTasks( 'grunt-contrib-clean' );
+    grunt.loadNpmTasks( 'grunt-contrib-concat' );
+    grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
+    grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+    grunt.loadNpmTasks( 'grunt-contrib-stylus' );
+    grunt.loadNpmTasks( 'grunt-notify');
+    grunt.loadNpmTasks('grunt-contrib-coffee');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+
+
+
+    grunt.registerTask('compilar', [
+      'jshint',
+      'uglify',
+      'stylus',
+      'notify:compilar'
+      ]);
+    grunt.registerTask('desplegar', [
+        'gitcommit', 
+        'gitpush', 
+        'sshexec:deploy',
+        'notify:deploy']);
+
+    grunt.registerTask('commit', [
+        'gitcommit', 
+        'gitpush'
+    ]);
+
+    // grunt.registerTask( 'css', ['stylus'] );
+
+};
+							
+						</code></pre>
+						
+					</section>
+					<section>
+						<h2>Gulp</h2>
+						<pre><code>
+'use strict';
+
+var gulp        = require('gulp'),
+    rename      = require('gulp-rename'),
+    uglify      = require('gulp-uglify'),
+    concat      = require('gulp-concat'),
+    sourcemaps  = require('gulp-sourcemaps'),
+    stylus      = require('gulp-stylus'),
+    jshint      = require('gulp-jshint'),
+    livereload  = require('gulp-livereload'),
+    watch       = require('gulp-watch'),
+    imagemin    = require('gulp-imagemin'),
+    header      = require('gulp-header'),
+    replace     = require('gulp-token-replace'),
+    nib         = require('nib'),
+    jade        = require('gulp-jade');
+
+var pkg         = require('./package.json'),
+    config      = require('./config/config.json');
+    config.debug.version = pkg.version; 
+    config.build.version = pkg.version; 
+
+
+var templatespath        = config.templatespath,
+    srcPath     = config.srcPath,
+    distPath    = config.distPath;
+
+var banner = ['/**',
+  ' * <%= pkg.name %> - <%= pkg.description %>',
+  ' * @version v<%= pkg.version %>',
+  ' * @author <%= pkg.author %>',
+  ' * @license <%= pkg.license %>',
+  ' */',
+  ''].join('\n');
+
+gulp.task('html', function() {
+ 
+  gulp.src(srcPath+'/templates/*.jade')
+    .pipe(jade({
+      locals: config.debug, 
+      pretty: true
+    }))
+    .pipe(gulp.dest(templatespath))
+    .pipe(livereload());
+});
+
+gulp.task('html-build', function() {
+ 
+  gulp.src(srcPath+'/templates/*.jade')
+    .pipe(jade({
+      locals: config.build
+    }))
+    .pipe(gulp.dest(templatespath))
+    .pipe(livereload());
+});
+
+
+gulp.task('js-build', function () {
+  return gulp.src(srcPath+'/js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
+    .pipe(uglify())
+    .pipe(concat(pkg.name+'.min.js'))
+    .pipe(header(banner, { pkg : pkg } ))
+    .pipe(gulp.dest(distPath+"/js/"))
+    .pipe(livereload());
+});
+
+gulp.task('js', function () {
+  return gulp.src(srcPath+'/js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
+    .pipe(concat(pkg.name+'.js'))
+    .pipe(header(banner, { pkg : pkg } ))
+    .pipe(gulp.dest(distPath+"/js/"))
+    .pipe(livereload());
+});
+
+gulp.task('css-build', function() {
+  return gulp.src(srcPath+'/css/*.styl')
+    .pipe(stylus({ use: nib(), compress: true }))
+    .pipe(rename({ basename: pkg.name  , suffix:".min"}))
+    .pipe(header(banner, { pkg : pkg } ))
+    .pipe(gulp.dest(distPath+'/css/'));
+});
+
+gulp.task('css', function() {
+  return gulp.src(srcPath+'/css/*.styl')
+    .pipe(sourcemaps.init())
+    .pipe(stylus({use: nib(),linenos: true}))
+    .pipe(rename({ basename: pkg.name}))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(distPath+'/css/'))
+    .pipe(livereload());
+
+});
+
+gulp.task('img', function () {
+    return gulp.src(distPath+'/img/*.*')
+        .pipe(imagemin())
+        .pipe(gulp.dest(distPath+'/img/'));
+});
+
+
+gulp.task('watch', function() {
+  livereload.listen();
+  gulp.watch(srcPath+'templates/*.jade', ['html']);
+  gulp.watch(srcPath+'css/*.styl', ['css']);
+  gulp.watch(srcPath+'js/*.js', ['js']);
+});
+
+
+gulp.task('server', ['js-build', 'css-build', 'html-build']);
+gulp.task('build', ['js-build', 'css-build', 'img', 'html-build']);
+gulp.task('build-js', ['js-build']);
+gulp.task('build-css', ['css-build']);
+gulp.task('build-html', ['html-build']);
+
+gulp.task('dev', ['js', 'css', 'html']);
+
+
+gulp.task('default', ['js', 'css', 'html']);
+
+						</code></pre>
+						
+					</section>
+					<section>
+						<h2>Brunch</h2>
+						<pre><code>
+exports.config =
+  # See http://brunch.io/#documentation for docs.
+  files:
+    javascripts:
+      joinTo:
+        'javascripts/app.js': /^app/
+        'javascripts/vendor.js': /^(?!app)/
+
+    stylesheets:
+      joinTo: 'stylesheets/app.css'
+
+    templates:
+      joinTo: 'javascripts/app.js'	
+						</code></pre>
+						
+					</section>
+				</section>
+				<section>
+					<section data-background="#EFEFEF">
+						<img src="/img/dotfiles-2.png" alt="">
+					</section>
+					<section>
+						<h2>✌ Aleluya ✌</h2>
+						<p>Comparte todas tus <strong>.configs</strong></p>
+					</section>
+					<section>
+						<ul>
+							<li><a href="https://dotfiles.github.io/">Lista de github</a></li>
+							<li><a href="https://github.com/sorin-ionescu/dotfiles" rel="author"><span >sorin-ionescu</span></a></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</section>
+				</section>
+
+
+
+
+				<section>
+					<blockqoute cite="http://webdevquotes.tumblr.com/post/62003314611/simply-start-making-stuff">
+						<p>
+							<em>“Simply start making stuff.”</em>
+						</p>
+						<p class="blood">Shawn Wilkins 2013</p>
+					</blockqoute>
+				</section>
+
+
+
+
+
+
+				<section data-markdown>
+					<script type="text/template">
+						## Markdown support
+
+						Write content using inline or external Markdown.
+						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+
+						```
+						<section data-markdown>
+						  ## Markdown support
+
+						  Write content using inline or external Markdown.
+						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+						</section>
+						```
+					</script>
+				</section>
+
+
+				<section id="transitions">
+					<h2>Transition Styles</h2>
+					<p>
+						You can select from different transitions, like: <br>
+						<a href="?transition=none#/transitions">None</a> -
+						<a href="?transition=fade#/transitions">Fade</a> -
+						<a href="?transition=slide#/transitions">Slide</a> -
+						<a href="?transition=convex#/transitions">Convex</a> -
+						<a href="?transition=concave#/transitions">Concave</a> -
+						<a href="?transition=zoom#/transitions">Zoom</a>
+					</p>
+				</section>
+
+				<section id="themes">
+					<h2>Themes</h2>
+					<p>
+						reveal.js comes with a few themes built in: <br>
+						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+					</p>
+				</section>
+
+				<section>
+					<section data-background="#dddddd">
+						<h2>Slide Backgrounds</h2>
+						<p>
+							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+						</p>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+						<h2>Image Backgrounds</h2>
+						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
+						<h2>Tiled Backgrounds</h2>
+						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+					</section>
+					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
+						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+							<h2>Video Backgrounds</h2>
+							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+						</div>
+					</section>
+					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+						<h2>... and GIFs!</h2>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
+					</p>
+					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						You can override background transitions per-slide.
+					</p>
+					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+				</section>
+
+				<section>
+					<h2>Pretty Code</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+					</code></pre>
+					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+				</section>
+
+				<section>
+					<h2>Marvelous List</h2>
+					<ul>
+						<li>No order here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Fantastic Ordered List</h2>
+					<ol>
+						<li>One is smaller than...</li>
+						<li>Two is smaller than...</li>
+						<li>Three!</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Tabular Tables</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Value</th>
+								<th>Quantity</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Apples</td>
+								<td>$1</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>Lemonade</td>
+								<td>$2</td>
+								<td>18</td>
+							</tr>
+							<tr>
+								<td>Bread</td>
+								<td>$3</td>
+								<td>2</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h2>Clever Quotes</h2>
+					<p>
+						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+					</p>
+					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Intergalactic Interconnections</h2>
+					<p>
+						You can link between slides internally,
+						<a href="#/2/3">like this</a>.
+					</p>
+				</section>
+
+				<section>
+					<h2>Speaker View</h2>
+					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
+					<p>Press the <em>S</em> key to try it out.</p>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+
+				<section>
+					<h2>Export to PDF</h2>
+					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
+					<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+				</section>
+
+				<section>
+					<h2>Global State</h2>
+					<p>
+						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+						will be added as a class to the document element when the slide is open. This lets you
+						apply broader style changes, like switching the page background.
+					</p>
+				</section>
+
+				<section data-state="customevent">
+					<h2>State Events</h2>
+					<p>
+						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+					</p>
+					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+Reveal.addEventListener( 'customevent', function() {
+	console.log( '"customevent" has fired' );
+} );
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Take a Moment</h2>
+					<p>
+						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+					</p>
+				</section>
+
+				<section>
+					<h2>Much more</h2>
+					<ul>
+						<li>Right-to-left support</li>
+						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
+					</ul>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- <a href="http://slides.com">Try the online editor</a> <br>
+						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+					</p>
+				</section>
+
+			</div>
 
 		</div>
 
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
 
-		  ga('create', 'UA-43375306-1', 'revealjs.com');
-		  ga('send', 'pageview');
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
 		</script>
+
 	</body>
 </html>
