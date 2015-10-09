@@ -52,23 +52,29 @@
 					<pre><code>
 {
     "name": "Jon E. Eguiluz",
-    "title": "webDev ninja", 
+    "title": "webDev ninja",
     "subtitle": "I ♥ coding",
     "languages": ["html", "css", "js", "python"],
     "extra_knowledge": ["git", "django", "gulp", "bash scripting", "linux"],
     "experience": "5 years as hard WebDev",
     "able_to_teaching": true
     "link": "https://www.twitter.com/viroide"
-}						
+}
 					</code></pre>
 				</section>
+        <section class="patrocinadores">
+          <h2>Patrocinadores</h2>
+          <img src="./img/logo_aa02.png" alt="Logo araba enkounter 02">
+          <br>
+          <img src="./img/ed_sprii.jpg" alt="Logotipo sprii + Empresa digitala">
+        </section>
 				<section data-background="http://i.giphy.com/Er3QVX48nt5ok.gif">
-					<h2>De esto...</h2>					
+					<h2>De esto...</h2>
 				</section>
 				<section data-background="http://i.giphy.com/JapiQqzjs4A1O.gif">
 					<h2>...a esto</h2>
 				</section>
-	
+
 				<section>
 					<h2>Indice</h2>
 					<ul>
@@ -106,7 +112,7 @@
 					<section data-background-video="/s3.amazonaws.com/files.panic.com/coda/Coda%20Demo%20English%201.2.mp4,//s3.amazonaws.com/files.panic.com/coda/Coda%20Demo%20English%201.2.webm"  data-background-video-loop>
 						<h2>Coda</h2>
 					</section>
-					<section>	
+					<section>
 						<h2>Atom</h2>
 						<ul>
 							<li>Es de <a href="//www.github.com">github</a>.</li>
@@ -235,18 +241,31 @@
   "dependencies": {
     "headjs": "~1.0.3"
   },
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test"
-  ]
+  "devDependencies": {
+    "bootstrap": "~3.3.5"
+  }
 }
-							
+
 						</code></pre>
 					</section>
 				</section>
-				
+				<section data-background="https://media.giphy.com/media/5VMNcCxVBibZK/giphy.gif">
+          <section>
+            <h2>Meta-lenguajes</h2>
+          </section>
+          <section>
+            <h2>De css</h2>
+            <h3>SaSS, Less, stylus...</h3>
+          </section>
+          <section>
+            <h2>De js</h2>
+            <h3>Coffee, TypeScript, Dart...</h3>
+          </section>
+          <section>
+            <h2>De html</h2>
+            <h3>Jade, Mustache.js, EJS...</h3>
+          </section>
+        </section>
 				<section>
 					<section>
 						<h2><a href="http://gruntjs.com/">Grunt</a> vs <a href="http://gulpjs.com/">Gulp</a> VS <a href="http://brunch.io/">Brunch</a></h2>
@@ -266,7 +285,7 @@
 							<li class="con">-plugins</li>
 						</ul>
 
-						
+
 					</section>
 					<section>
 						<h2>Grunt</h2>
@@ -281,7 +300,7 @@ module.exports = function( grunt ) {
             banner : '/* <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy/m/d") %>\n' +
                     '   <%= pkg.homepage %>\n' +
                     '   Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>' +
-                    ' - Licensed <%= (pkg.license).join(", ") %> */\n', 
+                    ' - Licensed <%= (pkg.license).join(", ") %> */\n',
             path : "emoweb/media/"
         },
         stylus: {
@@ -296,7 +315,7 @@ module.exports = function( grunt ) {
           compileDebug: {
             options: {compress: false,linenos: true},
             files: {
-              '<%= meta.path %>css/dist/estilos_debug.css': 
+              '<%= meta.path %>css/dist/estilos_debug.css':
               ['<%= meta.path %>css/estilos.styl', '<%= meta.path %>css/icons.styl', '<%= meta.path %>css/graficas.styl'] // 1:1 compile
               // 'path/to/another.css': ['path/to/sources/*.styl', 'path/to/more/*.styl'] // compile and concat into single file
             }
@@ -323,7 +342,7 @@ module.exports = function( grunt ) {
                 },
                 files: {
                     // 'yokse/static/dist/yokse.min.js': '<%= concat.dist.dest %>',
-                    '<%= meta.path %>js/dist/beauty.min.js': 
+                    '<%= meta.path %>js/dist/beauty.min.js':
                     ['<%= meta.path %>components/scroll/jquery.mCustomScrollbar.min.js',
                        '<%= meta.path %>components/jquery-cookie/jquery.cookie.js',
                        '<%= meta.path %>js/main.js',
@@ -391,7 +410,7 @@ module.exports = function( grunt ) {
                 tasks: ['coffee:compile', 'notify:coffee']
             }
         },
-         
+
 
     });
 
@@ -415,22 +434,22 @@ module.exports = function( grunt ) {
       'notify:compilar'
       ]);
     grunt.registerTask('desplegar', [
-        'gitcommit', 
-        'gitpush', 
+        'gitcommit',
+        'gitpush',
         'sshexec:deploy',
         'notify:deploy']);
 
     grunt.registerTask('commit', [
-        'gitcommit', 
+        'gitcommit',
         'gitpush'
     ]);
 
     // grunt.registerTask( 'css', ['stylus'] );
 
 };
-							
+
 						</code></pre>
-						
+
 					</section>
 					<section>
 						<h2>Gulp</h2>
@@ -454,8 +473,8 @@ var gulp        = require('gulp'),
 
 var pkg         = require('./package.json'),
     config      = require('./config/config.json');
-    config.debug.version = pkg.version; 
-    config.build.version = pkg.version; 
+    config.debug.version = pkg.version;
+    config.build.version = pkg.version;
 
 
 var templatespath        = config.templatespath,
@@ -471,10 +490,10 @@ var banner = ['/**',
   ''].join('\n');
 
 gulp.task('html', function() {
- 
+
   gulp.src(srcPath+'/templates/*.jade')
     .pipe(jade({
-      locals: config.debug, 
+      locals: config.debug,
       pretty: true
     }))
     .pipe(gulp.dest(templatespath))
@@ -482,7 +501,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('html-build', function() {
- 
+
   gulp.src(srcPath+'/templates/*.jade')
     .pipe(jade({
       locals: config.build
@@ -559,7 +578,7 @@ gulp.task('dev', ['js', 'css', 'html']);
 gulp.task('default', ['js', 'css', 'html']);
 
 						</code></pre>
-						
+
 					</section>
 					<section>
 						<h2>Brunch</h2>
@@ -576,33 +595,24 @@ exports.config =
       joinTo: 'stylesheets/app.css'
 
     templates:
-      joinTo: 'javascripts/app.js'	
+      joinTo: 'javascripts/app.js'
 						</code></pre>
-						
+
 					</section>
 				</section>
 				<section>
 					<section data-background="#EFEFEF">
 						<img src="/img/dotfiles-2.png" alt="">
 					</section>
-					<section>
+					<section class="texto-subrallado" data-background="https://media.giphy.com/media/xqmJFMqVv6cnu/giphy.gif">
 						<h2>✌ Aleluya ✌</h2>
 						<p>Comparte todas tus <strong>.configs</strong></p>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br>
 					</section>
 					<section>
-						<ul>
-							<li><a href="https://dotfiles.github.io/">Lista de github</a></li>
-							<li><a href="https://github.com/sorin-ionescu/dotfiles" rel="author"><span >sorin-ionescu</span></a></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-					</section>
+						<a href="https://dotfiles.github.io/">Lista de github</a>
+          </section>
 				</section>
 
 
@@ -617,260 +627,192 @@ exports.config =
 					</blockqoute>
 				</section>
 
+        <section>
+            <section>
+                <h1>Workflow</h1>
+            </section>
+            <section>
+                <h3>Creamos la carpeta y el <span class="blood">package.json</span></h3>
+                <pre><code>
+mcd prueba101
+npm init
+                </code></pre>
+            </section>
+            <section>
+              <h3>Instalamos gulp en local</h3>
+              <pre><code>npm install --save-dev gulp</code></pre>
+            </section>
+            <section>
+              <h3>Creamos el gulp file</h3>
+              <pre><code>subl gulpfile.js</code></pre>
+            </section>
+            <section>
+              <h3>Creamos la estructura de carpetas</h3>
+              <pre><code>
+mkdir src src/stylus src/coffee src/jade dist
+              </code></pre>
+            </section>
+            <section>
+              <h3>Copiar la plantilla de gulp</h3>
+              <!-- <pre><code></code></pre> -->
+            </section>
+            <section>
+              <h3>Edita las <strong class="blood"><em>default</em> task</strong></h3>
+              <pre><code>gulp.task('css', function() {
+  return gulp.src(srcPath+'/stylus/*.styl')
+    .pipe(stylus({use: nib(),linenos: true}))
+    .pipe(rename({ basename: pkg.name}))
+    .pipe(gulp.dest(distPath+'/css/'))
+    .pipe(livereload());
 
+});
+              </code></pre>
+            </section>
+            <section>
+              <h3>Configura el <span class="blood">config.json</span></h3>
+              <small>Mi truco para volverme menos loco</small>
+              <pre><code>{
+  "debug":{
+    "path_js":  "./js/prueba101.js",
+    "path_css":"./css/prueba101.css",
+    "livereload": true,
+    "bootstrap_css": "../lib/bootstrap/dist/css/bootstrap.min.css",
+    "bootstrap_js": "../lib/bootstrap/dist/js/bootstrap.min.js",
+    "jquey": "../lib/jquery/dist/jquery.min.js"
 
+  },
+  "build":{
+    "path_js":  "/js/prueba101.min.js",
+    "path_css":"/css/prueba101.min.css",
+    "livereload": false,
+    "bootstrap_css": "//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css",
+    "bootstrap_js": "//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js",
+    "jquey": "//code.jquery.com/jquery-1.11.2.min.js"
+  },
+  "srcPath" :"./src",
+  "distPath" :"./dist"
+}</code></pre>
+            </section>
+            <section>
+              <h3>Instalar todos los módulos con gulp</h3>
+              <pre><code>
+npm install gulp-rename gulp-uglify gulp-concat gulp-sourcemaps gulp-stylus
+gulp-jshint gulp-livereload gulp-watch gulp-header gulp-replace
+nib gulp-jade gulp-coffee gulp-token-replace --save-dev</code></pre>
+            </section>
+            <section>
+              <h2>Instalar <span class="blood">bower</span> y usarlo para bajar dependencias</h2>
+            </section>
+            <section>
+              <h3>Lo inicializamos para que cree el <span class="blood">bower.json</span></h3>
+              <pre><code>bower init</code></pre>
+            </section>
+            <section>
+              <h3>Copiar el <span class="blood">.bowerrc</span></h3>
+              <small>Y configuramos la ruta</small>
+              <!-- <pre><code></code></pre> -->
+            </section>
+            <section>
+              <h3>Instalamos <span class="blood">bootstrap</span></h3>
+              <pre><code>bower install bootstrap --save-dev</code></pre>
+            </section>
+            <section>
+              <h2>Probamos los comandos de gulp</h2>
+            </section>
+            <section>
+              <h3>Con/sin uglyfied</h3>
+              <h3>links locales o a CDNs</h3>
+            </section>
+            <section>
+              <h3>El <span class="blood">config.json</span> gloria vendita</h3>
+            </section>
+            <section>
+              <h2>Compartir el proyecto</h2>
+            </section>
+            <section>
+              <h3>Iniciar git</h3>
+              <pre><code>git init</code></pre>
+            </section>
+            <section>
+              <h3>Añadimos a git solo lo que sea imprescindible</h3>
+              <pre><code>
+git add *.json
+git add src
+              </code></pre>
+            </section>
+            <section>
+              <h3>Primer commit</h3>
+              <pre><code>git commit -am "Primer commit u Hola mundo"</code></pre>
+            </section>
+            <section>
+              <h3>Creamos un repositorio remoto</h3>
+              <small>Por ejemplo <a href="https://github.com/">github</a></small>
+            </section>
+            <section>
+              <h3>Añadimos el repo remoto a nuestro git local</h3>
+              <pre><code>git remote add origin git@github.com:Viroide/prueba101.git</code></pre>
+            </section>
+            <section>
+              <h3>Y <span class="blood">"pusheamos"</span></h3>
+              <pre><code>git push -u origin master</code></pre>
+            </section>
+            <section>
+              <h2>Que se lo baje un compi</h2>
+            </section>
+            <section>
+              <h3>Crear carpeta</h3>
+              <pre><code>mcd prueba102</code></pre>
+            </section>
+            <section>
+              <h3>Clonar repo</h3>
+              <pre><code>git clone https://github.com/Viroide/prueba101.git ./</code></pre>
+            </section>
+            <section>
+              <h3>Instalar modulos npm</h3>
+              <pre><code>npm install</code></pre>
+            </section>
+            <section>
+              <h3>Instalar dependencias web</h3>
+              <pre><code>bower install</code></pre>
+            </section>
+            <section>
+              <h2>El día a día</h2>
+            </section>
+            <section>
+              <h3>Tmux</h3>
+              <small class="pro">guardas la config en un archivo</small><br>
+              <small class="con">Deja los puertos bloqueados</small>
+            </section>
+            <section>
+              <h3>Terminator</h3>
+              <small class="pro">con detach podemos dejar todo para mañana</small><br>
+              <small class="con">No es tan <span class="blood">flipado</span> como el tmux</small>
+            </section>
+            <section>
+              <h3>¡Alias!</h3>
+              <pre><code>
+alias prueba101_env="chromium-browser 127.0.0.1:8000 &&
+  subl --project ~/proyectos/prueba101.sublime-project &&
+  cd /home/viroide/proyectos/prueba101/ &&
+  terminator -mbl prueba101 &"</code></pre>
+            </section>
+        </section>
 
+        <section data-background="https://media.giphy.com/media/ToMjGpAyK3hX5s1xyOk/giphy.gif">
+          <section>
+          <!-- {# <h1>Gracias!</h1> #} -->
+          </section>
+          <section class="patrocinadore texto-subrallado">
+              <h2>Patrocinadores</h2>
+              <img src="./img/logo_aa02.png" alt="Logo araba enkounter 02">
+              <br>
+              <img src="./img/ed_sprii.jpg" alt="Logotipo sprii + Empresa digitala">
+          </section>
+          <section>
+              <br><br><br><br><br><br><h1>¿Preguntas?</h1>
+          </section>
 
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
+        </section>
 			</div>
 
 		</div>

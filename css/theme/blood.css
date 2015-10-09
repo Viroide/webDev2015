@@ -329,3 +329,7 @@ body {
 
 .list-no-decoration {
   list-style-type: none !important; }
+
+.patrocinadores img {
+  border: 0px !important;
+  background: #FFF !important; }
