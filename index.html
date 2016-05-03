@@ -42,7 +42,7 @@
 			<div class="slides">
 				<section>
 					<h1>WebDev On Steroids</h1>
-					<h3>Bienvenido a 2015</h3>
+					<h3>Bienvenido a 2016</h3>
 					<p>
 						<small>Creado por Jon E. Eguiluz / <a href="http://twitter.com/viroide">@viroide</a></small>
 					</p>
@@ -54,10 +54,10 @@
     "name": "Jon E. Eguiluz",
     "title": "webDev ninja",
     "subtitle": "I ♥ coding",
-    "languages": ["html", "css", "js", "python"],
-    "extra_knowledge": ["git", "django", "gulp", "bash scripting", "linux"],
-    "experience": "5 years as hard WebDev",
-    "able_to_teaching": true
+    "languages": ["html", "css", "js", "python", "groovy"],
+    "extra_knowledge": ["git", "django", "grails", "gulp", "bash scripting", "linux"],
+    "experience": "6 years as hard WebDev",
+    "able_to_teaching": true,
     "link": "https://www.twitter.com/viroide"
 }
 					</code></pre>
@@ -67,6 +67,18 @@
           <!-- <img src="./img/logo_aa02.png" alt="Logo araba enkounter 02"> -->
           <br>
           <img src="./img/ed_sprii.jpg" alt="Logotipo sprii + Empresa digitala">
+        </section>
+        <section>
+          <section>
+            <h1>Ahora vosotros</h1>
+            <p>¿A qué os dedicáis?</p>
+          </section>
+          <section>
+            <h2>¿Con qué herramientas?</h2>
+          </section>
+          <section>
+            <h3>¿Os sentís comodos o acomodados?</h3>
+          </section>
         </section>
 				<section data-background="http://i.giphy.com/Er3QVX48nt5ok.gif">
 					<h2>De esto...</h2>
@@ -82,7 +94,7 @@
 						<li><strong>Plugins para editores.</strong> (Sublime)</li>
 						<li><strong>Terminal + esteroides</strong>: Tmux, zsh, Prezto/Oh my bash</li>
 						<li><strong>Gestion de paquetes web</strong>: Bower</li>
-						<li><strong>Automatizadores de tareas</strong>: Grunt vs Gulp...</li>
+						<li><strong>Automatizadores de tareas</strong>: Grunt vs Gulp vs webPack vs npm scripts...</li>
 						<li><strong>.dotfiles</strong>: configuraciones útiles para casi todo</li>
 					</ul>
 				</section>
@@ -104,16 +116,27 @@
 							<li>Cursor múltiple</li>
 							<li>Goto lo que haga falta</li>
 							<li>Todos los comandos en la paleta</li>
+              <li>Snippets</li>
+              <li>Settings en un json</li>
 							<li>Mini-mapa</li>
 							<li><a href="https://packagecontrol.io/browse/labels/theme">Themes</a> y <a href="https://packagecontrol.io/">plugins</a> a paladas</li>
 							<li><strong>Rápido y estable</strong></li>
 						</ul>
+              <aside class="notes">
+                  <pre>
+MULTISELECT: ⌘ + d
+GOTO: ⌘ + p
+PALETA: ⌘ + ⇧ + p
+
+⌘⌥⇧
+                    </pre>
+              </aside>
 					</section>
 					<section data-background-video="/s3.amazonaws.com/files.panic.com/coda/Coda%20Demo%20English%201.2.mp4,//s3.amazonaws.com/files.panic.com/coda/Coda%20Demo%20English%201.2.webm"  data-background-video-loop>
 						<h2>Coda</h2>
 					</section>
 					<section>
-						<h2>Atom</h2>
+						<h2>Atom</h2><h3> <h1></h1>
 						<ul>
 							<li>Es de <a href="//www.github.com">github</a>.</li>
 							<li><strong>Gratis</strong> y <strong>código libre</strong>.</li>
@@ -132,6 +155,7 @@
 							<li>Notepad++</li>
 							<li>UltraEdit</li>
 							<li>Komodo</li>
+              <li>IntelliJ</li>
 							<li>"Eclipse"</li>
 							<li>[...]</li>
 							<li>Dreamweaver</li>
@@ -158,7 +182,6 @@
 		"Emmet",
 		"Emmet Css Snippets",
 		"Git",
-		"Gulp",
 		"Jade",
 		"Markdown Preview",
 		"Package Control",
@@ -210,20 +233,17 @@
 					<section>
 						<h2>Mis plugins</h2>
 						<pre><code>
-  'environment' \
-  'terminal' \
-  'editor' \
-  'history' \
-  'directory' \
-  'spectrum' \
-  'utility' \
-  'completion' \
-  'prompt' \
-  'git' \
-  'fasd' \
-  'python' \
-  'history' \
-  'syntax-highlighting'
+{
+  "git",
+  "gulp",
+  "sublime",
+  "wd",
+  "brew",
+  "grails",
+  "jsontools",
+  "history"
+}
+
 						</code></pre>
 					</section>
 				</section>
@@ -259,7 +279,7 @@
           </section>
           <section>
             <h2>De js</h2>
-            <h3>Coffee, ECMASCRIPT 6, TypeScript</h3>
+            <h3>Coffee, ECMASCRIPT 7, TypeScript</h3>
           </section>
           <section>
             <h2>De html</h2>
@@ -268,7 +288,7 @@
         </section>
 				<section>
 					<section>
-						<h2><a href="http://gruntjs.com/">Grunt</a> vs <a href="http://gulpjs.com/">Gulp</a> VS <a href="http://brunch.io/">Brunch</a></h2>
+						<h2><a href="http://gruntjs.com/">Grunt</a> vs <a href="http://gulpjs.com/">Gulp</a> VS <a href="https://webpack.github.io/">WebPack</a> VS <a href="https://docs.npmjs.com/misc/scripts">NPM scripts</a></h2>
 					</section>
 					<section>
 						<h2>Pros y contras</h2>
@@ -580,35 +600,17 @@ gulp.task('default', ['js', 'css', 'html']);
 						</code></pre>
 
 					</section>
-					<section>
-						<h2>Brunch</h2>
-						<pre><code>
-exports.config =
-  # See http://brunch.io/#documentation for docs.
-  files:
-    javascripts:
-      joinTo:
-        'javascripts/app.js': /^app/
-        'javascripts/vendor.js': /^(?!app)/
-
-    stylesheets:
-      joinTo: 'stylesheets/app.css'
-
-    templates:
-      joinTo: 'javascripts/app.js'
-						</code></pre>
-
-					</section>
+					
 				</section>
-        <section>
+        <!-- <section>
           <h2><a href="//browserify.org/">Browserify</a> <br>VS <br>  <a href="//webpack.github.io/">webpack</a></h2>
-        </section>
+        </section> -->
 				<section>
 					<section data-background="#EFEFEF">
 						<img src="/img/dotfiles-2.png" alt="">
 					</section>
 					<section class="texto-subrallado" data-background="https://media.giphy.com/media/xqmJFMqVv6cnu/giphy.gif">
-						<h2>✌ Aleluya ✌</h2>
+						<h2>✌ Aleluya ✌</h2><br>
 						<p>Comparte todas tus <strong>.configs</strong></p>
             <br><br><br><br><br><br><br>
             <br><br><br><br>
